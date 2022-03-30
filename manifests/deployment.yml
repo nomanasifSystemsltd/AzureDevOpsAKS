@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: samplesnginxakswithacr 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: samplesnginxakswithacr
+  template:
+    metadata:
+      labels:
+        app: samplesnginxakswithacr 
+    spec:
+      containers:
+        - name: samplesnginxakswithacr 
+          image: myacr07.azurecr.io/samplesnginxakswithacr
+          ports:
+          - containerPort: 80
